@@ -3,7 +3,7 @@ import time, datetime
 import matplotlib.pyplot as plt
 
 class MetricLogger():
-    def __init__(self, save_dir):
+    def __init__(self, save_dir, total_episode):
         self.save_log = save_dir / "log"
         with open(self.save_log, "w") as f:
             f.write(
@@ -33,6 +33,8 @@ class MetricLogger():
 
         # Timing
         self.record_time = time.time()
+
+        self.total_episode = total_episode
 
 
     def log_step(self, reward, loss, q):
@@ -81,7 +83,7 @@ class MetricLogger():
         time_since_last_record = np.round(self.record_time - last_record_time, 3)
 
         print(
-            f"Episode {episode} - "
+            f"Episode {episode} / {self.total_episode} - "
             f"Step {step} - "
             f"Epsilon {epsilon} - "
             f"Mean Reward {mean_ep_reward} - "

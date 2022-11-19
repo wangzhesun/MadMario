@@ -40,10 +40,10 @@ save_dir.mkdir(parents=True)
 checkpoint = None # Path('checkpoints/2020-10-21T18-25-27/mario.chkpt')
 mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir, checkpoint=checkpoint)
 
-logger = MetricLogger(save_dir)
-
 # episodes = 40000
 episodes = 100000
+
+logger = MetricLogger(save_dir, episodes)
 
 ### for Loop that train the model num_episodes times by playing the game
 for e in range(episodes):
