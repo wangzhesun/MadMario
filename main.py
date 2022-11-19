@@ -41,7 +41,7 @@ checkpoint = None # Path('checkpoints/2020-10-21T18-25-27/mario.chkpt')
 mario = Mario(state_dim=(4, 84, 84), action_dim=env.action_space.n, save_dir=save_dir, checkpoint=checkpoint)
 
 # episodes = 40000
-episodes = 60000
+episodes = 100000
 
 logger = MetricLogger(save_dir, episodes)
 
