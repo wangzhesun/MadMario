@@ -19,10 +19,11 @@ def wrap_env(env):
     an   mp4 file in the stated directory. If we don't change the video directory
     the videos will get stored in 'content/' directory as default.
     '''
-    env = Monitor(env, './video001', force=True)
+    env = Monitor(env, './video003', force=True)
     return env
 
 env = gym_super_mario_bros.make('SuperMarioBros-1-1-v0')
+# env = gym_super_mario_bros.make('SuperMarioBros-3-1-v0')
 
 # env = JoypadSpace(
 #     env,
